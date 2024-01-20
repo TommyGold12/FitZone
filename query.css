@@ -1,0 +1,341 @@
+@media(max-width: 1024px) {
+
+    /**HEADER SECTION*/
+    .headerInfo h1 {
+        font-size: 60px;
+    }
+
+    .headerInfo p {
+        font-size: 20px;
+    }
+
+
+    /**FITNESS SECTION*/
+    .leftFitness {
+        width: 35%;
+    }
+
+    .rightFitness {
+        width: 65%;
+        margin-left: 30px;
+    }
+
+    .leftFitness h1 {
+        font-size: 35px;
+    }
+
+    .leftFitness p {
+        font-size: 14px;
+    }
+
+    .rightFitness .col1 img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .rightFitness .col2 h2 {
+        font-size: 20px;
+    }
+
+    .rightFitness .col2 p {
+        font-size: 16px;
+    }
+
+
+    /**COUNTER SECTION*/
+    .counter span {
+        font-size: 50px;
+    }
+
+    /**FEATURED SECTION*/
+    .featuredBio h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .featuredBio {
+        margin-left: 60px;
+    }
+
+    #square {
+        align-items: center;
+        width: 60px;
+        height: 60px;
+    }
+
+    #square img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .bio h3 {
+        font-size: 20px;
+    }
+
+    .bio p {
+        font-size: 16px;
+    }
+
+    .row {
+        margin-top: 30px;
+        height: 60px;
+    }
+
+    .bmi h1 {
+        font-size: 40px;
+    }
+
+    .bmi p {
+        font-size: 16px;
+    }
+
+    .calculateBMI {
+        font-size: 16px;
+    }
+
+
+    /**CONTACT SECTION*/
+    .email_row input {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .email h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .email form {
+        margin-top: 20px;
+    }
+
+    .email_row {
+        margin: 0;
+    }
+
+    .email_row textarea {
+        margin-bottom: 0;
+        width: 100%;
+    }
+}
+
+@media(max-width:768px) {
+
+    /**HEADER SECTION*/
+    .fitnessPrograms {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .links {
+        display: none;
+    }
+
+    .flex_hamburger_1 {
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        margin-bottom: 10px;
+    }
+
+    .flex_hamburger_2 {
+        width: 100%;
+        text-align: end;
+    }
+
+    .links a {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .hamburgerIcon {
+        display: block;
+    }
+
+    .headerInfo h1 {
+        font-size: 55px;
+    }
+
+    .headerInfo p {
+        font-size: 18px;
+    }
+
+
+    /**FITNESS SECTION*/
+    .flexFitness {
+        display: block;
+    }
+
+    .leftFitness {
+        width: 80%;
+        margin: 0px auto;
+        text-align: left;
+        margin-bottom: 30px;
+        margin-bottom: 10px;
+    }
+
+    .leftFitness h1 {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+    .leftFitness p {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .rightFitness {
+        margin: 0px auto;
+        width: 80%;
+    }
+
+    .rightFitness .col2 h2 {
+        font-size: 18px;
+    }
+
+    .rightFitness .col2 p {
+        font-size: 12px;
+    }
+
+
+    /**COUNTER SECTION*/
+    .counter .container {
+        padding: 0 30px;
+    }
+
+    .counter span {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .counter p {
+        font-size: 11px;
+    }
+
+    /**FEATURED SECTION*/
+    .featuredImg {
+        display: none;
+    }
+
+    .featuredBio {
+        margin-left: 10px;
+    }
+
+    .featuredBio h1 {
+        font-size: 25px;
+
+    }
+
+    .bio h3 {
+        font-size: 18px;
+    }
+
+    .bio p {
+        font-size: 12px;
+    }
+
+    .row {
+        margin-top: 20px;
+    }
+
+
+    /**BMI SECTION*/
+    .bmi h1 {
+        font-size: 25px;
+        padding-top: 40px;
+    }
+
+    .bmi p {
+        font-size: 12px;
+        width: 100%;
+    }
+
+    .bmiScale {
+        width: 250px;
+        height: 1300px;
+    }
+
+    .bmiScale img {
+        width: 100%;
+    }
+
+    #arrow {
+        width: 4px;
+        height: 100px;
+    }
+
+
+    .calculateBMI {
+        font-size: 12px;
+    }
+
+    .calculateBMI select {
+        font-size: 12px;
+    }
+
+    #age {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    #calculate {
+        font-size: 12px;
+    }
+
+    .bmiScale {
+        margin-top: 100px;
+    }
+
+
+    /**CONTACT SECTION*/
+    .contact {
+        margin-top: 40px;
+    }
+
+    .contact .container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .email {
+        width: 100%;
+        margin-left: 0;
+        margin: 0px auto;
+    }
+
+    .email h1 {
+        font-size: 25px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .email {
+        margin-bottom: 30px;
+    }
+
+    .email form {
+        width: fit-content;
+        margin: 0px auto;
+    }
+
+    .email_row input {
+        display: block;
+        margin-right: 0px;
+    }
+
+    .email_row {
+        margin: 0;
+    }
+
+    .email_row textarea {
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    .map {
+        width: 100%;
+        margin: 10px;
+    }
+}

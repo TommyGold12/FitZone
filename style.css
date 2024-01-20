@@ -1,0 +1,536 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Poppins:wght@100;200;300;400;500&family=Roboto:wght@100;300;400;500&family=Titillium+Web:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,900&family=Oswald:wght@300;500;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'roboto';
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0px auto;
+    padding: 0 20px;
+}
+
+.header {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: background-image 0.5s linear;
+}
+
+
+.navline {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    height: 100px;
+}
+
+.logo {
+    position: relative;
+    width: 135px;
+    height: 40px;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 55px solid red
+}
+
+.logo p {
+    position: absolute;
+    top: -40px;
+    left: 0px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+/**HAMBURGER MENU RESPONSIVE*/
+
+.hamburgerIcon {
+    display: none;
+}
+
+.hamburger img {
+    width: 32px;
+    cursor: pointer;
+}
+
+.showHambImg {
+    display: block;
+
+}
+
+
+
+.links a {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: rgb(131, 130, 130);
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-right: 20px;
+    font-size: 14px;
+}
+
+.links a:hover {
+    font-style: italic;
+    color: beige;
+}
+
+.links a:last-child {
+    margin-right: 0px;
+}
+
+.activeLink {
+    color: red !important;
+    font-style: italic;
+}
+
+
+.headerTitle {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.headerInfo {
+    width: 100%;
+}
+
+.hide {
+    opacity: 0 !important;
+    transition: opacity 0.5s linear;
+}
+
+
+
+.headerInfo h1 {
+    color: #fff;
+    font-family: 'Fira sans';
+    letter-spacing: 2px;
+    font-size: 70px;
+}
+
+.headerInfo p {
+    font-family: 'Oswald';
+    font-weight: 300;
+    font-size: 22px;
+    word-spacing: 3px;
+}
+
+.test:hover {
+    transition: 1s linear;
+    opacity: 0;
+}
+
+.featuredClasses {
+    margin-top: 60px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.featuredFlex {
+    display: flex;
+    justify-content: center;
+}
+
+.featuredImg {
+    width: 420px;
+}
+
+.featuredImg img {
+    width: 100%;
+    height: 100%;
+}
+
+.featuredBio {
+    margin-left: 100px;
+    margin-bottom: 40px;
+}
+
+.featuredBio h1 {
+    font-size: 50px;
+    font-family: 'Fira sans';
+    text-transform: uppercase;
+}
+
+.row {
+    margin-top: 40px;
+    height: 80px;
+    margin-bottom: 0px;
+    display: flex;
+}
+
+#square {
+    background-image: linear-gradient(to right bottom, rgb(245, 57, 11) 15%, rgb(226, 99, 14));
+    transition: 300ms;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+#square:hover {
+    transform: rotate(45deg);
+    border-radius: 10px;
+}
+
+.bio {
+    margin-left: 20px;
+}
+
+.bio p {
+    font-size: 16px;
+    margin-top: 5px;
+    text-wrap: wrap;
+}
+
+
+/**COUNTER SECTION*/
+.counter {
+
+    margin-bottom: 60px;
+    background-image: linear-gradient(to left, rgba(240, 6, 103), rgba(247, 162, 5));
+    height: 300px;
+    align-items: center;
+}
+
+.counter .container {
+    display: flex;
+    padding: 0 100px;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.counter span {
+    color: #fff;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-style: italic;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.counter .container div {
+    width: 25%;
+}
+
+.counter p {
+    color: #fff;
+    font-size: 16px;
+}
+
+
+/**FITNESS PROGRAMS*/
+.fitnessPrograms {
+    margin-bottom: 60px;
+    margin-top: 60px;
+    overflow: hidden;
+}
+
+.flexFitness {
+    display: flex;
+}
+
+.leftFitness h1 {
+    font-family: 'Fira Sans';
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+.leftFitness {
+    display: flex;
+    text-align: right;
+    align-items: center;
+    margin-right: 40px;
+    width: 45%;
+}
+
+.rightFitness {
+    margin-left: 50px;
+    width: 55%;
+}
+
+.fitnessColumn {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.fitnessHide {
+    transform: translateX(85%);
+    opacity: 0;
+    transition: 1500ms;
+}
+
+.fitnessReveal {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.fitnessColumn .col1 {
+    padding: 10px;
+    background-image: linear-gradient(to right bottom, rgb(245, 57, 11) 15%, rgb(226, 99, 14));
+    margin-right: 20px;
+    transition: 200ms;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.fitnessColumn .col1:hover+.col2 {
+    border-bottom: 2px solid red;
+}
+
+.fitnessColumn .col2 {
+    padding: 0px 10px;
+}
+
+.col2 p {
+    text-wrap: wrap;
+}
+
+.fitnessColumn .col1 img {
+    width: 48px;
+    height: 48px;
+}
+
+/**BMI CALCULATOR*/
+.bmi {
+    background-image: url(img/portrait-youg-afro-american-sports-man-doing-pushup-exercise.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    height: 800px;
+    color: #fff;
+}
+
+.bmi .container>div {
+    display: flex;
+}
+
+.bmi h1 {
+    padding-top: 60px;
+    font-family: 'Fira Sans';
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.bmi p {
+    width: 60%;
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+
+.calculateBMI {
+    width: 400px;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+.calculateBMI select {
+    display: block;
+    margin-bottom: 20px;
+    padding: 5px;
+    font-size: 18px;
+}
+
+#age {
+    width: 70px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+
+.calculateBMI input {
+    display: block;
+    padding: 5px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+.calculateBMI form span {
+    border: 1px solid #fff;
+    display: block;
+    width: fit-content;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+}
+
+#calculate {
+    padding: 8px 16px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    color: #fff;
+    background-image: linear-gradient(to right bottom, rgb(245, 57, 11) 15%, rgb(226, 99, 14));
+    cursor: pointer;
+    transition: width 0.5s;
+    width: 40%;
+}
+
+#calculate:hover {
+    width: 100%
+}
+
+.bmiScale {
+    margin-top: 50px;
+}
+
+.bmiScale p {
+    font-size: 24px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#bmiResults {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+
+.rowHide {
+    transform: translate(100%);
+    opacity: 0;
+    transition: 1500ms;
+}
+
+.rowReveal {
+    transform: translate(0);
+    opacity: 1;
+}
+
+#row_1 {
+    display: flex;
+}
+
+#row_1 div:first-child {
+    margin-right: 20px;
+}
+
+#row_2 {
+    display: flex;
+}
+
+#row_2 input {
+    margin-bottom: 5px;
+}
+
+#row_2 div:first-child {
+    margin-right: 20px;
+}
+
+.bmiScale div {
+    position: relative;
+}
+
+#arrow {
+    width: 6px;
+    height: 145px;
+    background-color: red;
+    border-radius: 5px;
+    position: absolute;
+    left: 49%;
+    bottom: 8px;
+    rotate: -90deg;
+    transform-origin: bottom;
+    transition: all 1s ease-out;
+}
+
+
+/**CONTACT*/
+.contact {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.contact .container {
+    display: flex;
+}
+
+.map {
+    border: 1px solid black;
+    width: 50%;
+}
+
+.email {
+    margin-left: 40px;
+    width: 50%;
+}
+
+.email form {
+    margin-top: 40px;
+}
+
+.email h1 {
+    font-family: 'fira sans';
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.email_row {
+    margin-bottom: 40px;
+}
+
+.email_row_block {
+    display: block;
+}
+
+.email_row input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding-bottom: 10px;
+    border: 1px solid rgb(116, 116, 116);
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.email_row input:after {
+    border-bottom: 1px solid red;
+}
+
+
+.email_row input:first-child {
+    margin-right: 20px;
+}
+
+.email_row:last-child {
+    align-items: center;
+    width: 100%;
+}
+
+.email_row button {
+    height: 30px;
+    width: 40%;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.email_row textarea {
+    font-size: 16px;
+    min-height: 100px;
+    margin-right: 20px;
+    width: 60%;
+}
