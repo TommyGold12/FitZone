@@ -83,7 +83,7 @@ body {
 
 .links a:hover {
     font-style: italic;
-    color: beige;
+    color: rgb(194, 111, 97);
 }
 
 .links a:last-child {
@@ -202,8 +202,6 @@ body {
 
 /**COUNTER SECTION*/
 .counter {
-
-    margin-bottom: 60px;
     background-image: linear-gradient(to left, rgba(240, 6, 103), rgba(247, 162, 5));
     height: 300px;
     align-items: center;
@@ -341,7 +339,7 @@ body {
 }
 
 .calculateBMI {
-    width: 400px;
+    max-width: 400px;
     padding: 10px 20px;
     font-size: 18px;
 }
@@ -502,9 +500,13 @@ body {
     outline: none;
     font-size: 16px;
     padding-bottom: 10px;
-    border: 1px solid rgb(116, 116, 116);
+    border: 1px solid rgb(116, 116, 116, 0.5);
     padding: 5px;
     border-radius: 2px;
+}
+
+.email_row input:focus {
+    border: 1px solid rgb(231, 154, 11);
 }
 
 .email_row input:after {
@@ -533,4 +535,5 @@ body {
     min-height: 100px;
     margin-right: 20px;
     width: 60%;
+    padding: 5px;
 }

@@ -132,6 +132,10 @@
         display: none;
     }
 
+    .links a {
+        letter-spacing: 2px;
+    }
+
     .flex_hamburger_1 {
         width: 100%;
         display: flex;
@@ -142,12 +146,17 @@
     .flex_hamburger_2 {
         width: 100%;
         text-align: end;
+        background-color: rgba(48, 48, 48, 0.4);
+        padding: 5px 20px;
+        border-radius: 5px;
     }
 
     .links a {
         display: block;
         margin-right: 0;
         margin-bottom: 5px;
+        color: #fff;
+        font-style: italic;
     }
 
     .hamburgerIcon {
@@ -211,7 +220,7 @@
     }
 
     .counter p {
-        font-size: 11px;
+        font-size: 10px;
     }
 
     /**FEATURED SECTION*/
@@ -336,6 +345,118 @@
 
     .map {
         width: 100%;
-        margin: 10px;
+    }
+}
+
+@media(max-width:375px) {
+
+    /**HEADER SECTION*/
+    .headerInfo h1 {
+        font-size: 50px;
+    }
+
+    .headerInfo p {
+        font-size: 18px;
+    }
+
+
+    /**FITNESS SECTION*/
+    .leftFitness h1 {
+        font-size: 20px;
+    }
+
+    .leftFitness p {
+        font-size: 10px;
+    }
+
+    .rightFitness .col2 h2 {
+        font-size: 14px;
+    }
+
+    .rightFitness .col2 p {
+        font-size: 10px;
+    }
+
+    .fitnessColumn .col1 {
+        margin-right: 0;
+    }
+
+
+
+    /**COUNTER SECTION*/
+    .counter .container {
+        display: block;
+    }
+
+    .counter .container span {
+        margin-bottom: 0;
+        font-size: 20px;
+    }
+
+    .counter .container .customers {
+        margin: 0px auto;
+        padding-top: 10%;
+        margin-bottom: 10px;
+    }
+
+    .counter .container .bodies {
+        margin: 0px auto;
+        margin-bottom: 10px;
+    }
+
+    .counter .container .hours {
+        margin: 0px auto;
+        margin-bottom: 10px;
+    }
+
+    .counter .container .stories {
+        margin: 0px auto;
+    }
+
+
+
+    /**FEATURED SECTION*/
+    .featuredClasses {
+        margin-top: 30px;
+    }
+
+    .featuredBio h1 {
+        font-size: 20px;
+    }
+
+    .bio h3 {
+        font-size: 14px;
+    }
+
+    .bio p {
+        font-size: 10px;
+    }
+
+    #row_2 {
+        display: block;
+    }
+
+    #row_2 div:last-child {
+        margin-top: 10px;
+    }
+
+    .map {
+        width: 280px;
+        margin: 0px auto;
+    }
+
+    .map iframe {
+        zoom: 1;
+    }
+
+    /**BMI SECTION*/
+    .bmiScale {
+        width: 200px;
+        height: 100px;
+    }
+
+    #arrow {
+        width: 3px;
+        height: 80px;
     }
 }
