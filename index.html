@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FitZone</title>
+
+    <script src="validator.js"></script>
+    <script src="sessionControl.js"></script>
+    <script src="User.js"></script>
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="query.css">
@@ -31,15 +35,93 @@
                             <a href="#section_3">about</a>
                             <a href="#section_4">BMI</a>
                             <a href="#section_5">contact</a>
+                            <button href="#section_1" id="navLogin">Login</button>
+                            <button href="#section1" id="navLogout">Logout</button>
                         </div>
                     </div>
                 </div>
-
-
             </div>
             <div class="headerTitle">
                 <div class="headerInfo"></div>
             </div>
+        </div>
+    </div>
+    <div class="loginOverlay loginDesign">
+        <div class="window">
+            <div class="closeButton">
+                <span class="closeOverlay">X</span>
+            </div>
+
+
+            <div class="loginWindow">
+                <div class="loginHeader">
+                    <h2>Log In</h2>
+                    <p>New user? <a href='#' id="createAccount">Create an account</a></p>
+                </div>
+                <form id="loginForm" autocomplete="off">
+                    <div class="flexRow">
+                        <img src="img/user-svgrepo-com.svg">
+                        <input type="text" id="loginEmail" placeholder="email">
+                    </div>
+                    <div class="flexRow">
+                        <img src="img/padlock-svgrepo-com.svg">
+                        <input type="text" id="loginPassword" placeholder="password">
+                    </div>
+
+                    <button id="login">Log In</button>
+                </form>
+
+                <div class="loginFooter">
+                    <p>Forgot your password? <a href="#">Get it back!</a> </p>
+                </div>
+            </div>
+
+            <div class="registerWindow">
+                <div class="registerInfo">
+                    <h2>Registration</h2>
+                </div>
+                <form id="registrationForm">
+                    <div class="rowBox">
+                        <div class="flexRow">
+                            <img src="img/user-svgrepo-com.svg">
+                            <input name="user_name" type="text" placeholder="name">
+                        </div>
+                    </div>
+
+                    <div class="rowBox">
+                        <div class="flexRow">
+                            <img src="img/user-svgrepo-com.svg">
+                            <input name="user_username" id="user_username" type="text" placeholder="username">
+                        </div>
+                    </div>
+
+                    <div class="rowBox">
+                        <div class="flexRow">
+                            <img src="img/email-svgrepo-com.svg">
+                            <input name="user_email" id="user_email" type="email" placeholder="email">
+                        </div>
+                    </div>
+
+                    <div class="rowBox">
+                        <div class="flexRow">
+                            <img src="img/padlock-svgrepo-com.svg">
+                            <input name="user_password" id="user_password" type="text" placeholder="password">
+                        </div>
+                    </div>
+
+                    <div class="rowBox">
+                        <div class="flexRow">
+                            <img src="img/padlock-svgrepo-com.svg">
+                            <input name="user_confirmPassword" type="text" placeholder="confirm password">
+                        </div>
+                    </div>
+                    <button id="register">Register</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="loginWindow">
+
         </div>
     </div>
 
