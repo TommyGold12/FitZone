@@ -1,3 +1,30 @@
+//* 1. LOGIN/LOGOUT COOKIES FUNCTION 
+// kreiranje funckije koja poziva metode s kojima ćemo diseablati ponovnu registraciju ako je korisnik trenutno logiran
+let session = new Session();
+session = session.getSession();
+// ako postoji cookies, prebaciti će nas na novu stranicu
+const loginBtn = document.querySelector('#navLogin');
+const logoutBtn = document.querySelector('#navLogout');
+const changeNav = function () {
+    loginBtn.style.display = 'none';
+    logoutBtn.style.display = 'inline-block';
+}
+if (session !== '') {
+    changeNav();
+}
+
+const destroyLogin = function () {
+    loginBtn.style.display = 'inline-block';
+    logoutBtn.style.display = 'none';
+
+    let session = new Session();
+    session = session.destroySession();
+    window.location.reload();
+}
+logoutBtn.addEventListener('click', destroyLogin);
+
+
+
 const headerInfo = document.querySelector('.headerInfo');
 const headerImg = document.querySelector('.header');
 const images = ['url(img/fitback11.jpg)', 'url(img/fitback22.jpg)'];
@@ -11,15 +38,25 @@ const bmiWeight = document.querySelector('#weight');
 const bmiButton = document.querySelector('#calculate');
 const bmiResults = document.querySelector('#bmiResults');
 const bmiArrow = document.querySelector('#arrow');
+const login = document.querySelector('#navLogin');
+const openLoginOverlay = document.querySelector('.loginOverlay');
+const closeLoginOverlay = document.querySelector('.closeOverlay');
+const createAccount = document.querySelector('#createAccount');
+const loginWindow = document.querySelector('.loginWindow');
+const registerWindow = document.querySelector('.registerWindow');
 
-//*LOAD ON TOP/
+
+
+
 /*
+//*LOAD ON TOP/
 window.addEventListener('load', function (e) {
     this.document.querySelector('body').scrollIntoView({
         behavior: 'smooth',
     })
 })
 */
+
 //* 1.PRELOAD IMAGES/
 const preload = function (e) {
     headerImg.style.backgroundImage = images[1];
@@ -59,7 +96,6 @@ document.querySelectorAll('.links a').forEach(function (all) {
     all.addEventListener('click', function (e) {
         e.preventDefault()
         const id = e.target.getAttribute('href');
-        console.log
         document.querySelector(id).scrollIntoView({
             behavior: 'smooth',
         });
@@ -154,7 +190,6 @@ const columnHeight = firstColumn.getBoundingClientRect().height;
 // pozivanje funkcije za dodijeljivanje atributa svakom elementu
 const reveal = function (entries) {
     entries.forEach(entry => {
-        console.log('vidkjivo')
         if (entry.isIntersecting) {
             entry.target.classList.add('fitnessReveal')
         }
@@ -292,6 +327,202 @@ window.addEventListener('resize', () => {
 
 })
 
+//* 10.LOGIN FORM
+const loginOpen = () => {
+    window.onscroll = function () {
+        // window.scrollTo(0, 0);
+    }
+    openLoginOverlay.style.display = 'flex';
+}
+login.addEventListener('click', loginOpen);
 
 
+const loginClose = () => {
+    openLoginOverlay.style.display = 'none';
+    loginWindow.style.display = 'block';
+    registerWindow.style.display = 'none';
+    window.onscroll = function () { }
+}
+closeLoginOverlay.addEventListener('click', loginClose);
 
+
+const registerOpen = () => {
+    loginWindow.style.display = 'none';
+    registerWindow.style.display = 'block';
+}
+createAccount.addEventListener('click', registerOpen);
+
+
+const navline = document.querySelector('.navline');
+const navHeight = navline.getBoundingClientRect().height;
+const header = document.querySelector('.header .container');
+
+
+//* 11.INTERSECTED NAVLINE
+const stickyNav = function (entries) {
+    const [entry] = entries; // const entries = entries[0],
+    if (!entry.isIntersecting) {
+        navline.classList.add('positionFixed');
+    }
+    else {
+        navline.classList.remove('positionFixed');
+    }
+}
+
+const obsOptions3 = {
+    root: null,
+    treshold: 0,
+    //rootMargin: `${-navHeight}px`,
+}
+
+const observer3 = new IntersectionObserver(stickyNav, obsOptions3);
+observer3.observe(header)
+
+/*
+const currentPosition = function () {
+    console.log(window.scrollY)
+}
+window.addEventListener('scroll', currentPosition)
+*/
+/*
+//* 12.VALIDATION REGISTRATION FORM
+const inputs = document.querySelectorAll('.registerWindow input');
+
+const errors = {
+    'user_name': [],
+    'user_username': [],
+    'user_email': [],
+    'user_password': [],
+    'user_confirmPassword': [],
+}
+
+inputs.forEach(function (element) {
+    element.addEventListener('change', function (each) {
+        let currentInput = each.target;
+        let inputValue = currentInput.value;
+        let inputName = currentInput.getAttribute('name')
+
+        if (inputValue.length > 4) {
+            errors[inputName] = [];
+
+            switch (inputName) {
+                case 'user_name':
+                    let validation = inputValue.trim();
+                    validation = validation.split(' ');
+                    if (validation.length < 2) {
+                        errors[inputName].push('Morate unijeti ime i prezime.');
+                    }
+                    break;
+
+                case 'user_email':
+                    if (!validateEmail(inputValue)) {
+                        errors[inputName].push('Neispravna email adresa');
+                        console.log('neispravna email adresa')
+                    }
+                    break;
+
+                case 'user_confirmPassword':
+                    let password = document.querySelector(`input[name = 'user_password']`).value;
+                    if (inputValue !== password) {
+                        errors[inputName].push('Unesite identične lozinke.');
+                    }
+                    break;
+            }
+        }
+
+        else {
+            errors[inputName] = ['Polje ne može imati manje od 5 znakova'];
+        }
+        writeErrors(errors);
+    })
+})
+
+const writeErrors = function (errors) {
+    for (let element of document.querySelectorAll('ul')) {
+        element.remove();
+    }
+
+    for (const key of Object.keys(errors)) {
+        let input = document.querySelector(`input[name = '${key}']`);
+        let parentElement = input.parentElement;
+        let errorElement = document.createElement('ul');
+        parentElement.appendChild(errorElement);
+
+        errors[key].forEach((error) => {
+            let li = document.createElement('li');
+            li.innerText = error;
+            errorElement.appendChild(li);
+        })
+    }
+}
+
+const validateEmail = function (email) {
+    //REGEX- validacija email-a
+    if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)) {
+        return true;
+
+    }
+    else false;
+}
+*/
+//* 12. VALIDATION USER DATA
+let config = {
+    'user_name': {
+        required: true,
+        minLength: 3,
+        maxLength: 25,
+    },
+    'user_username': {
+        required: true,
+        minLength: 3,
+        maxLength: 25,
+    },
+    'user_email': {
+        required: true,
+        email: true,
+        minLength: 5,
+        maxLength: 50,
+    },
+    'user_password': {
+        required: true,
+        minLength: 7,
+        maxLength: 25,
+        matching: 'user_confirmPassword',
+    },
+    'user_confirmPassword': {
+        required: true,
+        minLength: 7,
+        maxLength: 25,
+        matching: 'user_password',
+    },
+};
+let validator = new Validator(config);
+
+
+//* 13.VALIDATION PASSED
+document.querySelector('#registrationForm').addEventListener('submit', e => {
+    e.preventDefault()
+
+    if (validator.validationPassed()) {
+        let user = new User();
+        user.username = document.querySelector('#user_username').value;
+        user.email = document.querySelector('#user_email').value;
+        user.password = document.querySelector('#user_password').value;
+        //metoda iz user.js
+        user.create();
+    }
+    else {
+        alert('nije ok')
+    }
+})
+
+document.querySelector('#loginForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const email = document.querySelector('#loginEmail').value;
+    const password = document.querySelector('#loginPassword').value;
+
+    let user = new User();
+    user.email = email;
+    user.password = password;
+    user.login();
+})
