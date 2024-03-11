@@ -120,6 +120,24 @@
     }
 }
 
+@media(max-width: 850px) {
+    .links a {
+        margin-right: 10px;
+        font-size: 13px;
+    }
+
+    #createPlan {
+        margin-right: 10px;
+        font-size: 13px;
+    }
+
+    #navLogout {
+        font-size: 13px;
+    }
+}
+
+
+
 @media(max-width:768px) {
 
     /**HEADER SECTION*/
@@ -157,6 +175,11 @@
         margin-bottom: 5px;
         color: #fff;
         font-style: italic;
+    }
+
+    #createPlan {
+        margin-right: 0px;
+        margin-bottom: 5px;
     }
 
     .hamburgerIcon {
@@ -197,7 +220,7 @@
 
     .rightFitness {
         margin: 0px auto;
-        width: 80%;
+        width: 85%;
     }
 
     .rightFitness .col2 h2 {

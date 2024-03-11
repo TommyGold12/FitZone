@@ -49,7 +49,6 @@ class User {
                 let login_successeful = 0;
                 data.forEach(db_user => {
                     if (db_user.email === this.email && db_user.password === this.password) {
-
                         let session = new Session();
                         session.user_id = db_user.id;
                         session.startSession();
@@ -64,4 +63,63 @@ class User {
                 }
             })
     }
+
+    // rješavanje problema sa asinkronim JS-om
+    // bez ovog koraka, kod se preskače i nastavlja se dalje izvršavati, ne čeka se da se linija kod završi
+    async get(user_id) {
+        let api_url = this.api_url + '/Users/' + user_id;
+
+        let response = await fetch(api_url)
+        let data = await response.json();
+
+        return data;
+        /*
+            .then(response => response.json())
+            .then(data => {
+                return data;
+            })
+            */
+    }
+
+    //izmjena podataka na account-u
+    edit() {
+        let data = {
+            username: this.username,
+            email: this.email,
+        }
+        data.JSON.stringify(data);
+
+        let session = new Session();
+        session_id = session.getSession();
+
+        fetch(this.api_url + '/Users' + session_id, {
+            method: 'PUT',
+            header: {
+                'Content-Type': 'application/json',
+            },
+            body: data
+        })
+            .then(response => response.json())
+            .then(data => {
+                window.location.reload();
+            })
+    }
+
+
+    delete() {
+        let session = new Session();
+        session_id = session.getSession();
+
+        fetch(this.api_url + '/Users' + session_id, {
+            method: 'DELETE',
+        })
+            .then(response => response.json())
+            .then(data => {
+                let session = new Session();
+                session.destroySession();
+            })
+        window.location.href('/');
+    }
 }
+
+

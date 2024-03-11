@@ -3,11 +3,15 @@
 let session = new Session();
 session = session.getSession();
 // ako postoji cookies, prebaciti će nas na novu stranicu
+// kod isti/sličan kao i u user.js, ali ovaj kod se aktivira nakon refresha stranice, bez njega, nakon refresha bi se sve resetiralo u vratilo u početno stanje
+// u script.js dohvaćamo sesiju, dok u user.js startamo sesiju
 const loginBtn = document.querySelector('#navLogin');
 const logoutBtn = document.querySelector('#navLogout');
+const workoutBtn = document.querySelector('#createPlan');
 const changeNav = function () {
     loginBtn.style.display = 'none';
     logoutBtn.style.display = 'inline-block';
+    workoutBtn.style.display = 'inline-block';
 }
 if (session !== '') {
     changeNav();
@@ -57,7 +61,7 @@ window.addEventListener('load', function (e) {
 })
 */
 
-//* 1.PRELOAD IMAGES/
+//* 2.PRELOAD IMAGES/
 const preload = function (e) {
     headerImg.style.backgroundImage = images[1];
     headerImg.style.opacity = 0;
@@ -65,7 +69,7 @@ const preload = function (e) {
 preload(images)
 
 
-//* 2.IMAGES SLIDESHOW/
+//* 3.IMAGES SLIDESHOW/
 let imgCounter = 0;
 const backImg = function (el) {
     headerInfo.classList.add('hide');
@@ -91,7 +95,7 @@ const backImg = function (el) {
 setTimeout(backImg)
 
 
-//* 3.NAVLINKS SCROLLING/
+//* 4.NAVLINKS SCROLLING/
 document.querySelectorAll('.links a').forEach(function (all) {
     all.addEventListener('click', function (e) {
         e.preventDefault()
@@ -104,7 +108,7 @@ document.querySelectorAll('.links a').forEach(function (all) {
 
 
 
-//* 4.ACTIVE TABED LINKS/
+//* 5.ACTIVE TABED LINKS/
 document.querySelectorAll('.links a').forEach(function (all) {
     all.addEventListener('click', function (e) {
         //remove active class
@@ -119,7 +123,7 @@ document.querySelectorAll('.links a').forEach(function (all) {
 })
 
 
-//* 5.USERS COUNTER/
+//* 6.USERS COUNTER/
 const startCounter = function () {
     let a = 0;
     let b = 0;
@@ -151,13 +155,13 @@ const startCounter = function () {
     }
 
 
-    const intervalA = setInterval(counterA, 5)
-    const intervalB = setInterval(counterB, 6)
-    const intervalC = setInterval(counterC, 5)
-    const intervalD = setInterval(counterD, 6)
+    const intervalA = setInterval(counterA, 2)
+    const intervalB = setInterval(counterB, 3)
+    const intervalC = setInterval(counterC, 1)
+    const intervalD = setInterval(counterD, 3)
 }
 
-//* 6. START COUNTER ON SCROLL/
+//* 7. START COUNTER ON SCROLL/
 let interCounter = 0
 const hidden = document.querySelector('.counter')
 
@@ -182,7 +186,7 @@ observer.observe(hidden);
 
 
 let columnCounter = 0;
-//* 7.REVEALING ITEMS ON SCROLL/
+//* 8.REVEALING ITEMS ON SCROLL/
 const eachColumn = document.querySelectorAll('.fitnessColumn');
 const firstColumn = document.querySelector('.fitnessColumn')
 const columnHeight = firstColumn.getBoundingClientRect().height;
@@ -208,7 +212,7 @@ const observerReveal = new IntersectionObserver(reveal, obsOptions);
 // pozivanje observerReveal funkcije za svaki red html elementa
 eachColumn.forEach(el => observerReveal.observe(el))
 
-//* 7.1 REVEALING ITEM ON SCROLL/
+//* 8.1 REVEALING ITEM ON SCROLL/
 const row = document.querySelectorAll('.row');
 const firstRow = document.querySelector('.row')
 const rowHeight = firstRow.getBoundingClientRect().height;
@@ -236,7 +240,7 @@ row.forEach(el => observerReveal2.observe(el));
 
 
 
-//* 8.BMI CALCULATOR/
+//* 9.BMI CALCULATOR/
 const loadValue = () => {
     bmiHeight.nextElementSibling.innerHTML = bmiHeight.value + ` cm`;
     bmiWeight.nextElementSibling.innerHTML = bmiWeight.value + ` kg`;
@@ -304,7 +308,7 @@ const arrowAngle = function (e) {
 }
 
 
-//* 9.RESPONSIVE HAMBURGER MENU/
+//* 10.RESPONSIVE HAMBURGER MENU/
 const hambIcon = document.querySelector('.hamburgerIcon');
 const hambLinks = document.querySelector('.links');
 
@@ -327,7 +331,7 @@ window.addEventListener('resize', () => {
 
 })
 
-//* 10.LOGIN FORM
+//* 11.LOGIN FORM
 const loginOpen = () => {
     window.onscroll = function () {
         // window.scrollTo(0, 0);
@@ -358,7 +362,7 @@ const navHeight = navline.getBoundingClientRect().height;
 const header = document.querySelector('.header .container');
 
 
-//* 11.INTERSECTED NAVLINE
+//* 12.INTERSECTED NAVLINE
 const stickyNav = function (entries) {
     const [entry] = entries; // const entries = entries[0],
     if (!entry.isIntersecting) {
@@ -465,7 +469,7 @@ const validateEmail = function (email) {
     else false;
 }
 */
-//* 12. VALIDATION USER DATA
+//* 13. VALIDATION USER DATA
 let config = {
     'user_name': {
         required: true,
@@ -499,7 +503,7 @@ let config = {
 let validator = new Validator(config);
 
 
-//* 13.VALIDATION PASSED
+//* 14.VALIDATION PASSED
 document.querySelector('#registrationForm').addEventListener('submit', e => {
     e.preventDefault()
 
@@ -525,4 +529,11 @@ document.querySelector('#loginForm').addEventListener('submit', e => {
     user.email = email;
     user.password = password;
     user.login();
+    logOutTimer()
 })
+
+
+const createWorkoutPlan = function () {
+    window.location.href = 'hexa.html';
+}
+workoutBtn.addEventListener('click', createWorkoutPlan);

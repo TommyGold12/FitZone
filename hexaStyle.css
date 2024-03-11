@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Poppins:wght@100;200;300;400;500&family=Roboto:wght@100;300;400;500&family=Titillium+Web:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,900&family=Oswald:wght@300;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'roboto';
+}
+
+body {
+    background-color: rgb(255, 232, 254);
+}
+
+.mainPage {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: -8px 8px 20px rgb(0, 0, 0, 0.5);
+    flex-grow: 1;
+    margin-left: 5px;
+}
+
+.backButton {
+    width: fit-content;
+    margin-bottom: 5px;
+}
+
+.backButton button {
+    font-size: 16px;
+    padding: 3px 10px;
+    cursor: pointer;
+}
+
+.header {
+    margin: 0px auto;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+
+.title {
+    margin: 0px auto;
+    text-align: center;
+    text-transform: uppercase;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.container {
+    display: flex;
+    margin: 0px auto;
+    max-width: 1100px;
+}
+
+.container h2 {
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+
+.imgContainer {
+    display: flex;
+    align-items: center;
+    height: 500px;
+}
+
+.imgContainer img {
+    height: 90%;
+}
+
+.grid {
+    text-align: center;
+    width: 450px;
+    margin-right: 50px;
+    border: 1px solid grey;
+    padding: 15px;
+    height: fit-content;
+}
+
+.grid form {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid form label {
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.grid form select {
+    cursor: pointer;
+    padding: 3px 6px;
+}
+
+.grid form input {
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+.wrapper {
+    width: 300px;
+}
+
+.flex_wrapper {
+    display: flex;
+}
+
+.wrapper_day {
+    font-weight: 500;
+    margin-bottom: 5px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 3px;
+    text-align: center;
+    color: #fff;
+    padding: 3px 0;
+}
+
+.wrapper_exercise {
+    font-style: italic;
+    font-weight: 500;
+    margin-top: 10px;
+    border: 1px dotted black;
+    padding: 3px 6px;
+
+}
+
+.wrapper_exercise div {
+    background-color: rgba(95, 95, 95, 0.3);
+    border-radius: 3px;
+    display: inline-block;
+    padding: 3px 6px;
+}
+
+.flex_row {
+    margin-bottom: 15px;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: black 5px 5px 10px;
+}
+
+.exercise {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+#days {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.exer {
+    margin-right: 10px;
+    width: 55%;
+}
+
+.sets {
+    width: 18%;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.reps {
+    width: 18%;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.add {
+    width: 8%;
+    cursor: pointer;
+    color: green;
+    font-size: 18px;
+}
+
+.remove {
+    width: 8%;
+    cursor: pointer;
+    color: red;
+    font-size: 20px;
+}
+
+.createPost {
+    cursor: pointer;
+    padding: 5px 0;
+    background-color: transparent;
+    border: 1px solid rgb(110, 110, 110);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border-radius: 3px;
+    transition: 100ms;
+    color: green;
+    font-size: 16px;
+}
+
+.createPost:hover {
+    background-color: rgb(241, 241, 241);
+    transform: scale(0.99);
+}
+
+.deletePost {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.deleteButton {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 1px solid black;
+    background-color: red;
+}
+
+.deleteButton:active {
+    transform: scale(0.95);
+}

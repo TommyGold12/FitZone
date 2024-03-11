@@ -49,11 +49,6 @@ body {
     background-color: rgba(0, 0, 0, 0.9);
 }
 
-.intersectedNav {
-    width: 100%;
-}
-
-
 .logo {
     position: relative;
     width: 135px;
@@ -89,6 +84,8 @@ body {
 
 }
 
+
+
 .links a {
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
@@ -106,6 +103,30 @@ body {
 
 .links a:last-child {
     margin-right: 0px;
+}
+
+#createPlan {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 7px 14px;
+    background-color: rgb(240, 0, 0, 0.8);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 15px;
+    text-transform: uppercase;
+    transition: 100ms ease-in;
+    display: none;
+}
+
+#createPlan:hover {
+    transform: scale(1.05);
+}
+
+#createPlan:active {
+    transform: scale(1);
 }
 
 .activeLink {
@@ -296,6 +317,9 @@ body {
     text-transform: uppercase;
     color: green;
     cursor: pointer;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    padding: 3px 6px;
 }
 
 #navLogout {
@@ -308,6 +332,9 @@ body {
     text-transform: uppercase;
     color: red;
     cursor: pointer;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    padding: 3px 6px;
 }
 
 /** FEATURED CLASS  */

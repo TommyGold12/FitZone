@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="hexaStyle.css">
+    <link rel="stylesheet" href="hexaQuery.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="title">
+            <h1>Monthly workout planner</h1>
+        </div>
+    </div>
+    <div class="container">
+        <div class="mainPage">
+            <div class="backButton">
+                <button class="returnHome">&#8592; Home</button>
+            </div>
+            <h2 id="username_inner"></h2>
+            <div class="flex_wrapper">
+                <div class="grid">
+                    <form>
+                        <label for="days">Days</label>
+                        <select name="days" id="days">
+                            <option value="monday">Monday</option>
+                            <option value="tuesday">Tuesday</option>
+                            <option value="wendesday">Wendesday</option>
+                            <option value="thursday">Thursday</option>
+                            <option value="friday">Friday</option>
+                            <option value="saturday">Saturday</option>
+                            <option value="sunday">Sunday</option>
+                        </select>
+                        <label>Exercise</label>
+                        <div class="exercises">
+                            <div class="exercise">
+                                <input type="text" placeholder="exercise:" class="exer">
+                                <input type="number" placeholder="sets:" class="sets">
+                                <input type="number" placeholder="reps:" class="reps">
+                                <button class="add">+</button>
+                            </div>
+
+                        </div>
+
+                        <button class="createPost">Create plan</button>
+                    </form>
+
+                </div>
+
+                <div class="wrapper">
+                </div>
+            </div>
+        </div>
+        <div class="imgContainer">
+            <img alt="#" src="img/pencil.png">
+        </div>
+    </div>
+</body>
+
+<script src="sessionControl.js"></script>
+<script src="User.js"></script>
+<script src="Post.js"></script>
+<script src="hexa.js"></script>
+
+</html>
