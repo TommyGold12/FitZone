@@ -87,7 +87,7 @@ const backImg = function (el) {
         headerInfo.classList.remove('hide');
         imgCounter = 0;
         headerInfo.innerHTML = `<h1>Fuel your</h1>
-                                <h1>body fitness</h1>
+                                <h1>body with fitness</h1>
                                 <p>Be one of us</p>`
     }
     setTimeout('backImg()', 5000)
