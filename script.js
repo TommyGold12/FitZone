@@ -529,7 +529,6 @@ document.querySelector('#loginForm').addEventListener('submit', e => {
     user.email = email;
     user.password = password;
     user.login();
-    logOutTimer()
 })
 
 
